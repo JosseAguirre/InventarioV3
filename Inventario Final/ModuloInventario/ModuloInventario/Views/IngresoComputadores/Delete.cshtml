@@ -4,14 +4,15 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
+<link rel="stylesheet" href="../../Scripts/fontawesome-free-5.3.1-web/css/all.min.css">
+<h2 class="text-center" style="background-color:#3072AC; color:#ffffff;">Baja de Equipo</h2>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<h3>Estas seguro de dar de baja?</h3>
 <div>
-    <h4>INGRESOCOMPUTADORES</h4>
+    <h4>Ingreso de Computadores</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
+        <dt id="Responsable">
             @Html.DisplayNameFor(model => model.PERSONA.NOMBRE1)
         </dt>
 
@@ -19,7 +20,7 @@
             @Html.DisplayFor(model => model.PERSONA.NOMBRE1)
         </dd>
 
-        <dt>
+        <dt id="Ciudad">
             @Html.DisplayNameFor(model => model.SEDE.CODIGO)
         </dt>
 
@@ -27,7 +28,7 @@
             @Html.DisplayFor(model => model.SEDE.CODIGO)
         </dd>
 
-        <dt>
+        <dt id="Codigo">
             @Html.DisplayNameFor(model => model.CODIGOINTERNO)
         </dt>
 
@@ -35,7 +36,7 @@
             @Html.DisplayFor(model => model.CODIGOINTERNO)
         </dd>
 
-        <dt>
+        <dt id="Articulo">
             @Html.DisplayNameFor(model => model.ARTICULO)
         </dt>
 
@@ -43,7 +44,7 @@
             @Html.DisplayFor(model => model.ARTICULO)
         </dd>
 
-        <dt>
+        <dt id="Ram">
             @Html.DisplayNameFor(model => model.MEMORIARAM)
         </dt>
 
@@ -51,7 +52,7 @@
             @Html.DisplayFor(model => model.MEMORIARAM)
         </dd>
 
-        <dt>
+        <dt id="Procesador">
             @Html.DisplayNameFor(model => model.PROCESADOR)
         </dt>
 
@@ -59,7 +60,7 @@
             @Html.DisplayFor(model => model.PROCESADOR)
         </dd>
 
-        <dt>
+        <dt id="Disco">
             @Html.DisplayNameFor(model => model.DISCODURO)
         </dt>
 
@@ -67,7 +68,7 @@
             @Html.DisplayFor(model => model.DISCODURO)
         </dd>
 
-        <dt>
+        <dt id="Licencia">
             @Html.DisplayNameFor(model => model.LICENCIADO)
         </dt>
 
@@ -75,7 +76,7 @@
             @Html.DisplayFor(model => model.LICENCIADO)
         </dd>
 
-        <dt>
+        <dt id="Office">
             @Html.DisplayNameFor(model => model.OFFICE)
         </dt>
 
@@ -83,7 +84,7 @@
             @Html.DisplayFor(model => model.OFFICE)
         </dd>
 
-        <dt>
+        <dt id="Marca">
             @Html.DisplayNameFor(model => model.MARCA)
         </dt>
 
@@ -91,7 +92,7 @@
             @Html.DisplayFor(model => model.MARCA)
         </dd>
 
-        <dt>
+        <dt id="Modelo">
             @Html.DisplayNameFor(model => model.MODELO)
         </dt>
 
@@ -99,7 +100,7 @@
             @Html.DisplayFor(model => model.MODELO)
         </dd>
 
-        <dt>
+        <dt id="Serie">
             @Html.DisplayNameFor(model => model.SERIE)
         </dt>
 
@@ -107,7 +108,7 @@
             @Html.DisplayFor(model => model.SERIE)
         </dd>
 
-        <dt>
+        <dt id="Particularidad">
             @Html.DisplayNameFor(model => model.PARTICULARIDAD)
         </dt>
 
@@ -115,7 +116,7 @@
             @Html.DisplayFor(model => model.PARTICULARIDAD)
         </dd>
 
-        <dt>
+        <dt id="Estado">
             @Html.DisplayNameFor(model => model.ESTADO)
         </dt>
 
@@ -123,7 +124,7 @@
             @Html.DisplayFor(model => model.ESTADO)
         </dd>
 
-        <dt>
+        <dt id="FacturaN">
             @Html.DisplayNameFor(model => model.NODEFACTURA)
         </dt>
 
@@ -131,7 +132,7 @@
             @Html.DisplayFor(model => model.NODEFACTURA)
         </dd>
 
-        <dt>
+        <dt id="FacturaV">
             @Html.DisplayNameFor(model => model.VALORFACTURA)
         </dt>
 
@@ -139,7 +140,7 @@
             @Html.DisplayFor(model => model.VALORFACTURA)
         </dd>
 
-        <dt>
+        <dt id="Fecha">
             @Html.DisplayNameFor(model => model.FECHAADQUISICION)
         </dt>
 
@@ -147,7 +148,7 @@
             @Html.DisplayFor(model => model.FECHAADQUISICION)
         </dd>
 
-        <dt>
+        <dt id="Observaciones">
             @Html.DisplayNameFor(model => model.OBSERVACIONES)
         </dt>
 
@@ -157,12 +158,34 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
+    <div class="form-actions no-color">
+        <button type="submit" value="Delete" class="btn btn-outline-danger"><i class="fas fa-times-circle"></i> Dar de baja</button> |
+        @Html.ActionLink("Volver", "Index")
+    </div>
     }
 </div>
+
+<script>
+    $('#Responsable').text('Responsable');
+    $('#Codigo').text('C\u00F3digo Interno');
+    $('#Ciudad').text('Ciudad de Ubicaci\u00F3n');
+    $('#Articulo').text('Art\u00EDculo');
+    $('#Ram').text('Memoria RAM(GB)');
+    $('#Procesador').text('Procesador');
+    $('#Disco').text('Disco Duro(GB)');
+    $('#Licencia').text('Licenciado');
+    $('#Office').text('Office');
+    $('#Marca').text('Marca');
+    $('#Modelo').text('Modelo');
+    $('#Serie').text('Serie');
+    $('#Particularidad').text('Particularidad');
+    $('#Estado').text('Estado Activo');
+    $('#FacturaN').text('NºFactura');
+    $('#FacturaV').text('Valor de Factura');
+    $('#Fecha').text('Fecha de Adquisici\u00F3n');
+    $('#Observaciones').text('Observaciones');
+</script>
