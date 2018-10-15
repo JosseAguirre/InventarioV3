@@ -1,0 +1,66 @@
+﻿@model ModuloInventario.Models.ASIGNACIONVARIOS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ASIGNACIONVARIOS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.INGRESOVARIOS.CODIGOINTERNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.INGRESOVARIOS.CODIGOINTERNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PERSONA.NOMBRE1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PERSONA.NOMBRE1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEDE.CODIGO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEDE.CODIGO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIEMPOINICIO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIEMPOINICIO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TIEMPOFIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TIEMPOFIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ESTADOENTREGA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ESTADOENTREGA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SECUENCIAL }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

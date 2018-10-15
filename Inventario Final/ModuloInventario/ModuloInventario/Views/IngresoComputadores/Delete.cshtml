@@ -1,0 +1,168 @@
+﻿@model ModuloInventario.Models.INGRESOCOMPUTADORES
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>INGRESOCOMPUTADORES</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PERSONA.NOMBRE1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PERSONA.NOMBRE1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEDE.CODIGO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEDE.CODIGO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGOINTERNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGOINTERNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ARTICULO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ARTICULO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MEMORIARAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MEMORIARAM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PROCESADOR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PROCESADOR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DISCODURO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DISCODURO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LICENCIADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LICENCIADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OFFICE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OFFICE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MARCA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MARCA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MODELO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MODELO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SERIE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SERIE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PARTICULARIDAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PARTICULARIDAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ESTADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ESTADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NODEFACTURA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NODEFACTURA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VALORFACTURA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VALORFACTURA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHAADQUISICION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHAADQUISICION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OBSERVACIONES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OBSERVACIONES)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ModuloInventario.Models.ARTICULO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Articulos</h2>
+
+<p>
+    @Html.ActionLink("Nuevo", "Create")
+</p>
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ARTICULO1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CATEGORIAARTICULO)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ARTICULO1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CATEGORIAARTICULO)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.SECUENCIAL }) |
+                    @Html.ActionLink("Detalle", "Details", new { id = item.SECUENCIAL }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.SECUENCIAL })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

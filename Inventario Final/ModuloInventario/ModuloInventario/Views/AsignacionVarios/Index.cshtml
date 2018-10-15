@@ -1,0 +1,69 @@
+﻿@model ModuloInventario.ViewModels.IndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<h3>Asignacion de Equipos</h3>
+
+<p>
+    @Html.ActionLink("Asignar", "Create")
+</p>
+<table class="table  table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                Código_Interno
+            </th>
+            <th>
+                Responsable
+            </th>
+            <th>
+                Ubicación
+            </th>
+            <th>
+                Tiempo_Inicio
+            </th>
+            <th>
+                Tiempo_Fin
+            </th>
+            <th>
+                Estado_Entrega
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.asignacionVarios)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.INGRESOVARIOS.CODIGOINTERNO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PERSONA.NOMBRE1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SEDE.DESCRIPCION)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TIEMPOINICIO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TIEMPOFIN)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ESTADOENTREGA)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.SECUENCIAL }) |
+                    @Html.ActionLink("Detalle", "Details", new { id = item.SECUENCIAL }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.SECUENCIAL })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@{Html.RenderPartial("_paginador", Model);}

@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Disponibilidad";
+}
+
+<!DOCTYPE html>
+<link rel="stylesheet" href="../Scripts/fontawesome-free-5.3.1-web/css/all.min.css">
+<html>
+<head>
+    <br />
+    <p></p>
+    <meta name="viewport" content="width=device-width" />
+    <title>Disponibilidad</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Computadores', 'Cantidad'],
+                ['Total', 35],
+                ['Asignados', 9]
+            ]);
+
+            var options = {
+                title: 'Computadores - Laptops'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Equipos', 'Cantidad'],
+                ['Total', 52],
+                ['Asignados', 7]
+            ]);
+
+            var options = {
+                title: 'Articulos Varios'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
+
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+<body>
+    <h1 class="text-center">Disponibilidad</h1>
+    <div class="row bg">
+        <div class="col-sm-6">
+            <div id="piechart" style="width: 800px; height: 500px;"></div>
+        </div>
+        <div class="col-sm-6">
+            <div id="piechart1" style="width: 800px; height: 500px;"></div>
+        </div>
+    </div>
+    <a href="/" class="btn btn-outline-primary btn-sm"><i class="fas fa-undo-alt fa-1x"></i> Regresar</a>
+</body>
+</html>
+

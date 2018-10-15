@@ -1,0 +1,122 @@
+﻿@model ModuloInventario.Models.INGRESOVARIOS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>INGRESOVARIOS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ARTICULO.ARTICULO1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ARTICULO.ARTICULO1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PERSONA.NOMBRE1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PERSONA.NOMBRE1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SEDE.CODIGO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEDE.CODIGO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CODIGOINTERNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGOINTERNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MARCA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MARCA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MODELO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MODELO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SERIE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SERIE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PARTICULARIDAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PARTICULARIDAD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ESTADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ESTADO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NODEFACTURA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NODEFACTURA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VALORFACTURA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VALORFACTURA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FECHAADQUISICION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHAADQUISICION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OBSERVACIONES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OBSERVACIONES)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SECUENCIAL }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
