@@ -3,62 +3,77 @@
 @{
     ViewBag.Title = "Edit";
 }
-
-<h2>Edit</h2>
-
-
+<br />
+<link rel="stylesheet" href="../../Scripts/fontawesome-free-5.3.1-web/css/all.min.css">
+<h2 class="text-center" style="background-color:#3072AC; color:#ffffff;">Editar Registro</h2>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>ASIGNACIONVARIOS</h4>
+        <h4>Asignación Artículos</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.SECUENCIAL)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SECUENCIALRESPONSABLE, "SECUENCIALRESPONSABLE", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.SECUENCIALRESPONSABLE, "SECUENCIALRESPONSABLE", htmlAttributes: new { @class = "control-label col-md-2", id="Responsable" })
             <div class="col-md-10">
-                @Html.DropDownList("SECUENCIALRESPONSABLE", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.SECUENCIALRESPONSABLE, "", new { @class = "text-danger" })
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-user fa-1x"></i></span>
+                    @Html.DropDownList("SECUENCIALRESPONSABLE", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SECUENCIALRESPONSABLE, "", new { @class = "text-danger" })
+                </div>
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SECUENCIALVARIOS, "SECUENCIALVARIOS", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.SECUENCIALVARIOS, "SECUENCIALVARIOS", htmlAttributes: new { @class = "control-label col-md-2", id="Codigo" })
             <div class="col-md-10">
-                @Html.DropDownList("SECUENCIALVARIOS", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.SECUENCIALVARIOS, "", new { @class = "text-danger" })
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-key fa-1x"></i></span>
+                    @Html.DropDownList("SECUENCIALVARIOS", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SECUENCIALVARIOS, "", new { @class = "text-danger" })
+                </div>
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.UBICACION, "UBICACION", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.UBICACION, "UBICACION", htmlAttributes: new { @class = "control-label col-md-2", id="Ubicacion" })
             <div class="col-md-10">
-                @Html.DropDownList("UBICACION", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.UBICACION, "", new { @class = "text-danger" })
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
+                    @Html.DropDownList("UBICACION", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.UBICACION, "", new { @class = "text-danger" })
+                </div>
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TIEMPOINICIO, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TIEMPOINICIO, htmlAttributes: new { @class = "control-label col-md-2", id="FechaInicio" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TIEMPOINICIO, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TIEMPOINICIO, "", new { @class = "text-danger" })
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-calendar-alt"></i></span>
+                    @Html.EditorFor(model => model.TIEMPOINICIO, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TIEMPOINICIO, "", new { @class = "text-danger" })
+                </div>
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TIEMPOFIN, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.TIEMPOFIN, htmlAttributes: new { @class = "control-label col-md-2", id="FechaFin" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TIEMPOFIN, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.TIEMPOFIN, "", new { @class = "text-danger" })
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-calendar-alt"></i></span>
+                    @Html.EditorFor(model => model.TIEMPOFIN, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TIEMPOFIN, "", new { @class = "text-danger" })
+                </div>
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ESTADOENTREGA, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ESTADOENTREGA, htmlAttributes: new { @class = "control-label col-md-2", id="EstadoEntrega" })
             <div class="col-md-10">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.ESTADOENTREGA)
@@ -69,16 +84,24 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <button type="submit" value="Save" class="btn btn-outline-warning"><i class="fas fa-save"></i> Guardar</button>
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Volver", "Index")
 </div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+<script>
+    $('#Responsable').text('Responsable:');
+    $('#Codigo').text('C\u00F3digo Interno:');
+    $('#Ubicacion').text('Ubicaci\u00F3n:');
+    $('#FechaInicio').text('Fecha de Asignaci\u00F3n:');
+    $('#FechaFin').text('Fecha de Finalizaci\u00F3n:');
+    $('#EstadoEntrega').text('¿A sido entregado?:');
+</script>

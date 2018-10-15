@@ -3,14 +3,14 @@
 @{
     ViewBag.Title = "Details";
 }
-
-<h2>Details</h2>
-
+<link rel="stylesheet" href="../../Scripts/fontawesome-free-5.3.1-web/css/all.min.css">
+<h2 class="text-center" style="background-color:#3072AC; color:#ffffff;">Detalle</h2>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
 <div>
-    <h4>ASIGNACIONCOMPUTADORES</h4>
+    <h4>Asignación de Computadores</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
+        <dt id="Codigo">
             @Html.DisplayNameFor(model => model.INGRESOCOMPUTADORES.CODIGOINTERNO)
         </dt>
 
@@ -18,7 +18,7 @@
             @Html.DisplayFor(model => model.INGRESOCOMPUTADORES.CODIGOINTERNO)
         </dd>
 
-        <dt>
+        <dt id="Responsable">
             @Html.DisplayNameFor(model => model.PERSONA.NOMBRE1)
         </dt>
 
@@ -26,7 +26,7 @@
             @Html.DisplayFor(model => model.PERSONA.NOMBRE1)
         </dd>
 
-        <dt>
+        <dt id="Ubicacion">
             @Html.DisplayNameFor(model => model.SEDE.CODIGO)
         </dt>
 
@@ -34,7 +34,7 @@
             @Html.DisplayFor(model => model.SEDE.CODIGO)
         </dd>
 
-        <dt>
+        <dt id="FechaInicio">
             @Html.DisplayNameFor(model => model.TIEMPOINICIO)
         </dt>
 
@@ -42,7 +42,7 @@
             @Html.DisplayFor(model => model.TIEMPOINICIO)
         </dd>
 
-        <dt>
+        <dt id="FechaFin">
             @Html.DisplayNameFor(model => model.TIEMPOFIN)
         </dt>
 
@@ -50,7 +50,7 @@
             @Html.DisplayFor(model => model.TIEMPOFIN)
         </dd>
 
-        <dt>
+        <dt id="EstadoEntrega">
             @Html.DisplayNameFor(model => model.ESTADOENTREGA)
         </dt>
 
@@ -61,6 +61,15 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.SECUENCIAL }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.SECUENCIAL }) |
+    @Html.ActionLink("Volver", "Index")
 </p>
+
+<script>
+    $('#Responsable').text('Responsable:');
+    $('#Codigo').text('C\u00F3digo Interno:');
+    $('#Ubicacion').text('Ubicaci\u00F3n:');
+    $('#FechaInicio').text('Fecha de Asignaci\u00F3n:');
+    $('#FechaFin').text('Fecha de Finalizaci\u00F3n:');
+    $('#EstadoEntrega').text('Estado Entrega:');
+</script>
