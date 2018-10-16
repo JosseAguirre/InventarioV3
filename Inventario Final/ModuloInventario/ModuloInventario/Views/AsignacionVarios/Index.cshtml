@@ -11,6 +11,18 @@
     <a href="/Home/SeleccionAsignacion" class="btn btn-outline-primary btn-sm"><i class="fas fa-undo-alt fa-1x"></i> Regresar</a> |
     @Html.ActionLink("Asignar", "Create")
 </p>
+
+<div class="form-group">
+    @using (Html.BeginForm("Index", "AsignacionVarios", FormMethod.Get))
+    {
+        <p>
+            Buscardor: @Html.TextBox("SearchString", null, new { @class = "form-control" })
+        <p></p>
+        <button type="submit" class="btn btn-outline-info"><i class="fas fa-search fa-1x"></i> Consultar</button>
+        </p>
+    }
+</div>
+
 <table class="table  table-striped table-bordered">
     <thead class="thead-dark">
         <tr>

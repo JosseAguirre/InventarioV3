@@ -16,10 +16,31 @@ namespace ModuloInventario.Controllers
         private InventarioContext db = new InventarioContext();
 
         // GET: AsignacionComputadores
-        public ActionResult Index(int pagina = 1)
+        public ActionResult Index(string currentFilter, string searchString, int pagina = 1)
         {
+            ViewBag.SearchString = searchString;
+
+            if (searchString != null)
+            {
+                pagina = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
 
             var aSIGNACIONCOMPUTADORES = db.ASIGNACIONCOMPUTADORES.Include(a => a.INGRESOCOMPUTADORES).Include(a => a.PERSONA).Include(a => a.SEDE);
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                aSIGNACIONCOMPUTADORES = aSIGNACIONCOMPUTADORES.Where(s => s.INGRESOCOMPUTADORES.CODIGOINTERNO.ToUpper().Contains(searchString.ToUpper()) ||
+                s.PERSONA.NOMBRE1.ToUpper().Contains(searchString.ToUpper()) || s.PERSONA.APELLIDO1.ToUpper().Contains(searchString.ToUpper()) ||
+                s.SEDE.DESCRIPCION.ToUpper().Contains(searchString.ToUpper()));
+
+            }
+
             var cantidadRegistrosPorPagina = 10;
             using (var db = new InventarioContext())
             {

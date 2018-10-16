@@ -16,9 +16,32 @@ namespace ModuloInventario.Controllers
         private InventarioContext db = new InventarioContext();
 
         // GET: IngresoComputadores
-        public ActionResult Index(int pagina = 1)
+        public ActionResult Index(string currentFilter, string searchString, int pagina = 1)
         {
+            ViewBag.SearchString = searchString;
+
+            if (searchString != null)
+            {
+                pagina = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
             var iNGRESOCOMPUTADORES = db.INGRESOCOMPUTADORES.Include(i => i.PERSONA).Include(i => i.SEDE);
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                iNGRESOCOMPUTADORES = iNGRESOCOMPUTADORES.Where(s => s.CODIGOINTERNO.ToUpper().Contains(searchString.ToUpper()) ||
+                s.ARTICULO.ToUpper().Contains(searchString.ToUpper()) || s.PROCESADOR.ToUpper().Contains(searchString.ToUpper()) ||
+                s.MARCA.ToUpper().Contains(searchString.ToUpper()) || s.MODELO.ToUpper().Contains(searchString.ToUpper()) ||
+                s.PERSONA.NOMBRE1.ToUpper().Contains(searchString.ToUpper()) || s.PERSONA.APELLIDO1.ToUpper().Contains(searchString.ToUpper()) ||
+                s.SEDE.DESCRIPCION.ToUpper().Contains(searchString.ToUpper()));
+
+            }
             var cantidadRegistrosPorPagina = 10;
             using (var db = new InventarioContext())
             {

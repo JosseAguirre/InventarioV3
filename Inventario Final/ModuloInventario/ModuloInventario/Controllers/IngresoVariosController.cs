@@ -16,9 +16,32 @@ namespace ModuloInventario.Controllers
         private InventarioContext db = new InventarioContext();
 
         // GET: IngresoVarios
-        public ActionResult Index(int pagina = 1)
+        public ActionResult Index(string currentFilter, string searchString, int pagina = 1)
         {
+            ViewBag.SearchString = searchString;
+
+            if (searchString != null)
+            {
+                pagina = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
             var iNGRESOVARIOS = db.INGRESOVARIOS.Include(i => i.ARTICULO).Include(i => i.PERSONA).Include(i => i.SEDE);
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                iNGRESOVARIOS = iNGRESOVARIOS.Where(s => s.CODIGOINTERNO.ToUpper().Contains(searchString.ToUpper()) ||
+                s.ARTICULO.ARTICULO1.ToUpper().Contains(searchString.ToUpper()) ||
+                s.MARCA.ToUpper().Contains(searchString.ToUpper()) || s.MODELO.ToUpper().Contains(searchString.ToUpper()) ||
+                s.PERSONA.NOMBRE1.ToUpper().Contains(searchString.ToUpper()) || s.PERSONA.APELLIDO1.ToUpper().Contains(searchString.ToUpper()) ||
+                s.SEDE.DESCRIPCION.ToUpper().Contains(searchString.ToUpper()));
+
+            }
 
             var cantidadRegistrosPorPagina = 10;
             using (var db = new InventarioContext())
