@@ -81,7 +81,7 @@ namespace ModuloInventario.Controllers
         public ActionResult Create()
         {
             ViewBag.SECUENCIALVARIOS = new SelectList(db.INGRESOVARIOS, "SECUENCIAL", "CODIGOINTERNO");
-            ViewBag.SECUENCIALRESPONSABLE = new SelectList(db.PERSONA, "SECUENCIAL", "NOMBRE1");
+            ViewBag.SECUENCIALRESPONSABLE = new SelectList(db.PERSONA, "SECUENCIAL", "NOMBREUNIDO");
             ViewBag.UBICACION = new SelectList(db.SEDE, "SECUENCIAL", "DESCRIPCION");
             return View();
         }

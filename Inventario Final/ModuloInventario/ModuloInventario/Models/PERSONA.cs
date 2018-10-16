@@ -59,5 +59,7 @@ namespace ModuloInventario.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<INGRESOVARIOS> INGRESOVARIOS { get; set; }
+
+        public string NOMBREUNIDO { get { return NOMBRE1 + " " + APELLIDO1; } }
     }
 }
