@@ -17,11 +17,11 @@
     @using (Html.BeginForm("Index", "AsignacionComputadores", FormMethod.Get))
     {
         <p>
-            Buscardor: @Html.TextBox("SearchString", null, new { @class = "form-control" })
-        <p></p>
-        <button type="submit" class="btn btn-outline-info"><i class="fas fa-search fa-1x"></i> Consultar</button>
+            <div class="input-group-prepend">
+                <button type="submit" class="btn btn-outline-info"><i class="fas fa-search fa-1x">  Consultar:</i></button>@Html.TextBox("SearchString", null, new { @class = "form-control" })
+            </div>
         </p>
-    }
+     }
 </div>
 
 <table class="table table-striped table-bordered">
