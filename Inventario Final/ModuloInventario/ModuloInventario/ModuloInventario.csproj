@@ -276,6 +276,9 @@
     <Content Include="Views\IngresoVarios\Details.cshtml" />
     <Content Include="Views\IngresoVarios\Edit.cshtml" />
     <Content Include="Views\IngresoVarios\Index.cshtml" />
+    <Content Include="Views\AsignacionComputadores\DisplayTemplates\Boolean.cshtml" />
+    <Content Include="Views\AsignacionVarios\DisplayTemplates\Boolean.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
