@@ -257,6 +257,15 @@
     <Content Include="Views\AsignacionComputadores\Details.cshtml" />
     <Content Include="Views\AsignacionComputadores\Edit.cshtml" />
     <Content Include="Views\AsignacionComputadores\Index.cshtml" />
+    <Content Include="Views\Home\SeleccionIngreso.cshtml" />
+    <Content Include="Views\Home\SeleccionAsignacion.cshtml" />
+    <Content Include="Views\Home\Disponibilidad.cshtml" />
+    <Content Include="Views\Shared\_paginador.cshtml" />
+    <Content Include="Views\IngresoComputadores\Create.cshtml" />
+    <Content Include="Views\IngresoComputadores\Delete.cshtml" />
+    <Content Include="Views\IngresoComputadores\Details.cshtml" />
+    <Content Include="Views\IngresoComputadores\Edit.cshtml" />
+    <Content Include="Views\IngresoComputadores\Index.cshtml" />
     <Content Include="Views\AsignacionVarios\Create.cshtml" />
     <Content Include="Views\AsignacionVarios\Delete.cshtml" />
     <Content Include="Views\AsignacionVarios\Details.cshtml" />
@@ -267,15 +276,6 @@
     <Content Include="Views\IngresoVarios\Details.cshtml" />
     <Content Include="Views\IngresoVarios\Edit.cshtml" />
     <Content Include="Views\IngresoVarios\Index.cshtml" />
-    <Content Include="Views\Home\SeleccionIngreso.cshtml" />
-    <Content Include="Views\Home\SeleccionAsignacion.cshtml" />
-    <Content Include="Views\Home\Disponibilidad.cshtml" />
-    <Content Include="Views\Shared\_paginador.cshtml" />
-    <Content Include="Views\IngresoComputadores\Create.cshtml" />
-    <Content Include="Views\IngresoComputadores\Delete.cshtml" />
-    <Content Include="Views\IngresoComputadores\Details.cshtml" />
-    <Content Include="Views\IngresoComputadores\Edit.cshtml" />
-    <Content Include="Views\IngresoComputadores\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

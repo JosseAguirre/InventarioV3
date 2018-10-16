@@ -46,9 +46,9 @@ namespace ModuloInventario.Models
 
         public bool ESTADO { get; set; }
 
-        public int NODEFACTURA { get; set; }
+        public int? NODEFACTURA { get; set; }
 
-        public int VALORFACTURA { get; set; }
+        public int? VALORFACTURA { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime FECHAADQUISICION { get; set; }

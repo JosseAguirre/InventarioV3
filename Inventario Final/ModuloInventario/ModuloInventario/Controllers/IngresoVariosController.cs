@@ -19,6 +19,7 @@ namespace ModuloInventario.Controllers
         public ActionResult Index(int pagina = 1)
         {
             var iNGRESOVARIOS = db.INGRESOVARIOS.Include(i => i.ARTICULO).Include(i => i.PERSONA).Include(i => i.SEDE);
+
             var cantidadRegistrosPorPagina = 10;
             using (var db = new InventarioContext())
             {

@@ -19,6 +19,7 @@ namespace ModuloInventario.Controllers
         public ActionResult Index(int pagina = 1)
         {
             var aSIGNACIONVARIOS = db.ASIGNACIONVARIOS.Include(a => a.INGRESOVARIOS).Include(a => a.PERSONA).Include(a => a.SEDE);
+
             var cantidadRegistrosPorPagina = 10;
             using (var db = new InventarioContext())
             {
@@ -37,7 +38,7 @@ namespace ModuloInventario.Controllers
                 return View(modelo);
             }
 
-            //return View(aSIGNACIONVARIOS.ToList());
+            return View(aSIGNACIONVARIOS.ToList());
         }
 
         // GET: AsignacionVarios/Details/5
