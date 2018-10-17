@@ -27,25 +27,25 @@
 <table class="table table-striped table-bordered">
     <thead class="thead-dark">
         <tr>
-            <th>
-                Código_Interno
+            <th class="text-xl-center">
+                Equipo
             </th>
-            <th>
+            <th class="text-xl-center">
                 Responsable
             </th>
-            <th>
+            <th class="text-xl-center">
                 Ubicación
             </th>
-            <th>
-                Tiempo_Inicio
+            <th class="text-xl-center">
+                Fecha de Asignación
             </th>
-            <th>
-                Tiempo_Fin
+            <th class="text-xl-center">
+                Fecha de Entrega
             </th>
-            <th>
-                Estado_Entrega
+            <th class="text-xl-center">
+                Estado
             </th>
-            <th>Opciones</th>
+            <th class="text-xl-center">Opciones</th>
         </tr>
     </thead>
     <tbody>
@@ -61,10 +61,10 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.SEDE.DESCRIPCION)
                 </td>
-                <td>
+                <td class="text-xl-right">
                     @Html.DisplayFor(modelItem => item.TIEMPOINICIO)
                 </td>
-                <td id="1">
+                <td class="text-xl-right">
                     @Html.DisplayFor(modelItem => item.TIEMPOFIN)
                 </td>
                 <td>

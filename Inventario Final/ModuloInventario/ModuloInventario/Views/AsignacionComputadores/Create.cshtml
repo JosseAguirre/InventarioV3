@@ -33,7 +33,7 @@
             @Html.LabelFor(model => model.SECUENCIALCOMPUTADOR, "SECUENCIALCOMPUTADOR", htmlAttributes: new { @class = "control-label col-md-2", @id = "Codigo" })
             <div class="col-md-10">
                 <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fas fa-key fa-1x"></i></span>
+                    <span class="input-group-text"><i class="fas fa-desktop fa-1x"></i></span>
                     @Html.DropDownList("SECUENCIALCOMPUTADOR", null, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.SECUENCIALCOMPUTADOR, "", new { @class = "text-danger" })
                 </div>
@@ -101,9 +101,9 @@
 
 <script>
     $('#Responsable').text('Responsable:');
-    $('#Codigo').text('C\u00F3digo Interno:');
+    $('#Codigo').text('Equipo Disponible');
     $('#Ubicacion').text('Ubicaci\u00F3n:');
     $('#FechaInicio').text('Fecha de Asignaci\u00F3n:');
-    $('#FechaFin').text('Fecha de Finalizaci\u00F3n:');
+    $('#FechaFin').text('Fecha de Entrega:');
     $('#EstadoEntrega').text('¿A sido entregado?:');
 </script>

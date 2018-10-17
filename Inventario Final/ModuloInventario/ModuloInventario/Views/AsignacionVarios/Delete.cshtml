@@ -20,12 +20,12 @@
             @Html.DisplayFor(model => model.INGRESOVARIOS.CODIGOINTERNO)
         </dd>
 
-        <dt id="Responable">
-            @Html.DisplayNameFor(model => model.PERSONA.NOMBRE1)
+        <dt id="Responsable">
+            @Html.DisplayNameFor(model => model.PERSONA.NOMBREUNIDO)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PERSONA.NOMBRE1)
+            @Html.DisplayFor(model => model.PERSONA.NOMBREUNIDO)
         </dd>
 
         <dt id="Ubicacion">
@@ -73,8 +73,8 @@
     }
 </div>
 <script>
+    $('#Codigo').text('Art\u00EDculo');
     $('#Responsable').text('Responsable:');
-    $('#Codigo').text('C\u00F3digo Interno:');
     $('#Ubicacion').text('Ubicaci\u00F3n:');
     $('#FechaInicio').text('Fecha de Asignaci\u00F3n:');
     $('#FechaFin').text('Fecha de Finalizaci\u00F3n:');
