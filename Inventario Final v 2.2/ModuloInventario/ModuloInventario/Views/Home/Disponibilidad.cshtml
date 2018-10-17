@@ -8,6 +8,9 @@
 
 <!DOCTYPE html>
 <link rel="stylesheet" href="../Scripts/fontawesome-free-5.3.1-web/css/all.min.css">
+<script src="~/Scripts/Mapa Ecuador/jquery-jvectormap-2.0.3.css"></script>
+<script src="~/Scripts/Mapa Ecuador/jquery-jvectormap-2.0.3.min.js"></script>
+<script src="~/Scripts/Mapa Ecuador/Mapa.Ecuador.js"></script>
 <html>
 <head>
 
@@ -17,14 +20,16 @@
     <p></p>
     <h1 class="text-left">Disponibilidad</h1>
     <div class="row bg">
+
         <div class="col-sm-6">
-            <div id="container" style="min-width: 500px; height: 600px; max-width: 600px; margin: 0 auto"></div>
+            <div id="container" style="min-width: 500px; height: 300px; max-width: 300px; margin: 0 auto"></div>
         </div>
-        <div class="col-sm-6">
-            <div id="container1" style="min-width: 500px; height: 600px; max-width: 600px; margin: 0 auto"></div>
+        
+        <div class="col-sm-3">
+            <div id="container1" style="min-width: 500px; height: 300px; max-width: 300px; margin: 0 auto"></div>
         </div>
     </div>
-        <a href="/" class="btn btn-outline-primary btn-sm"><i class="fas fa-undo-alt fa-1x"></i> Regresar</a>
+    <a href="/" class="btn btn-outline-primary btn-sm"><i class="fas fa-undo-alt fa-1x"></i> Regresar</a>
 </body>
 </html>
 
@@ -70,12 +75,12 @@
                     }]
                 }]
             });
-           
+
         });
     });
 
 
-    
+
 </script>
 
 
@@ -127,4 +132,43 @@
 
 
 
+</script>
+<script>
+    $('#world-map').vectorMap({
+        map: 'Ecuador',
+        backgroundColor: '#9D9EA0',
+        series: {
+            regions: [{
+                values: { "c0": "1", "c1": "2" },
+                scale: ['#d9d4ca', '#b3d1ff'],
+                normalizeFunction: 'polynomial'
+
+            }]
+
+        },
+        regionStyle: {
+            initial: {
+                fill: "#f4f3f0",
+                stroke: "#666666",
+                "stroke-width": 1,
+                "stroke-opacity": 1
+
+            },
+            hover: {
+                fill: "#0051A3",
+                "fill-opacity": "1"
+
+            }
+
+        },
+        series: {
+            regions: [{
+                values: {
+                    'Pichincha': '#F76300',
+                    'Tungurahua': '#F76300'
+                },
+                attribute: 'fill'
+            }]
+        }
+    })
 </script>
