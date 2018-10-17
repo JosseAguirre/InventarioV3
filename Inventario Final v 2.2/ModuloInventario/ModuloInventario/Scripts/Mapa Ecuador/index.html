@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <h1>Prueba</h1>
+    <script src="jquery-3.3.1.js"></script>
+    <script src="jquery-jvectormap-2.0.3.css"></script>
+    <script src="jquery-jvectormap-2.0.3.min.js"></script>
+    <script src="Mapa.Ecuador.js"></script>
+</head>
+
+<body>
+    <div id="world-map" style="width: 100px; height: 150px; zoom: 2;"></div>
+    <script>
+
+        $('#world-map').vectorMap({
+            map: 'Ecuador',
+            backgroundColor: '#b3d1ff',
+            series: {
+                regions: [{
+                    values: { "c0": "1", "c1": "2" },
+                    scale: ['#ffffff', '#b3d1ff'],
+                    normalizeFunction: 'polynomial'
+
+                }]
+
+            },
+            regionStyle: {
+                initial: {
+                    fill: "#f4f3f0",
+                    stroke: "#666666",
+                    "stroke-width": 1,
+                    "stroke-opacity": 1
+
+                },
+                hover: {
+                    fill: "#faa432",
+                    "fill-opacity": "1"
+
+                }
+
+            }
+        })
+    </script>
+</body>
+
+
+</html>

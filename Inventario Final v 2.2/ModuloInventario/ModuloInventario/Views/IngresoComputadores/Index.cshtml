@@ -1,0 +1,165 @@
+﻿@model ModuloInventario.ViewModels.IndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<h2>Ingreso de Computadores</h2>
+<link rel="stylesheet" href="../Scripts/fontawesome-free-5.3.1-web/css/all.min.css">
+<p>
+    <a href="/Home/SeleccionIngreso" class="btn btn-outline-primary btn-sm"><i class="fas fa-undo-alt fa-1x"></i> Regresar</a> |
+    @Html.ActionLink("Ingresar", "Create")
+</p>
+
+<div class="form-group">
+    @using (Html.BeginForm("Index", "IngresoComputadores", FormMethod.Get))
+    {
+        <p>
+            <div class="input-group-prepend">
+                <button type="submit" class="btn btn-outline-info"><i class="fas fa-search fa-1x">  Consultar:</i></button>@Html.TextBox("SearchString", null, new { @class = "form-control" })
+            </div>
+        </p>
+    }
+</div>
+
+<table class="table table-responsive table-striped table-bordered ">
+    <thead class="thead-dark">
+        <tr>
+            <th class="text-xl-center">
+                <canvas width="170" height="1"></canvas>
+                Asignado A:
+            </th>
+            <th class="text-xl-center">
+                Ubicación
+            </th>
+            <th class="text-xl-center">
+                <canvas width="175" height="1"></canvas>
+                Código Interno
+            </th>
+            <th class="text-xl-center">
+                Tipo
+            </th>
+            <th class="text-xl-center">
+                <canvas width="148" height="1"></canvas>
+                Memoria RAM (GB)
+            </th>
+            <th class="text-xl-center">
+                <canvas width="175" height="1"></canvas>
+                Procesador
+            </th>
+            <th class="text-xl-center">
+                <canvas width="121" height="1"></canvas>
+                Disco Duro (GB)
+            </th>
+            <th class="text-xl-center">
+                Licenciado
+            </th>
+            <th class="text-xl-center">
+                Office
+            </th>
+            <th class="text-xl-center">
+                <canvas width="110" height="1"></canvas>
+                Marca
+            </th>
+            <th class="text-xl-center">
+                <canvas width="175" height="1"></canvas>
+                Modelo
+            </th>
+            <th class="text-xl-center">
+                <canvas width="175" height="1"></canvas>
+                Serie
+            </th>
+            <th class="text-xl-center">
+                Particularidad
+            </th>
+            <th class="text-xl-center">
+                Estado
+            </th>
+            <th class="text-xl-center">
+                <canvas width="145" height="1"></canvas>
+                Número de Factura
+            </th>
+            <th class="text-xl-center">
+                <canvas width="122" height="1"></canvas>
+                Valor de Factura
+            </th>
+            <th class="text-xl-center">
+                <canvas width="159" height="1"></canvas>
+                Fecha de Adquisición
+            </th>
+            <th class="text-xl-center">
+                <canvas width="200" height="1"></canvas>
+                Observaciones
+            </th>
+            <th class="text-xl-center"><canvas width="200" height="1"></canvas>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ingresoComputador)
+        {
+        <tr>
+            <td class="text-xl-left">
+                @Html.DisplayFor(modelItem => item.PERSONA.NOMBREUNIDO)
+            </td>
+            <td class="text-xl-left">
+                @Html.DisplayFor(modelItem => item.SEDE.DESCRIPCION)
+            </td>
+            <td class="text-xl-left">
+                @Html.DisplayFor(modelItem => item.CODIGOINTERNO)
+            </td>
+            <td class="text-xl-left">
+                @Html.DisplayFor(modelItem => item.ARTICULO)
+            </td>
+            <td class="text-xl-right">
+                @Html.DisplayFor(modelItem => item.MEMORIARAM)
+            </td>
+            <td class="text-xl-left">
+                @Html.DisplayFor(modelItem => item.PROCESADOR)
+            </td>
+            <td class="text-xl-right">
+                @Html.DisplayFor(modelItem => item.DISCODURO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LICENCIADO)
+            </td>
+            <td class="text-xl-left">
+                @Html.DisplayFor(modelItem => item.OFFICE)
+            </td>
+            <td class="text-xl-left">
+                @Html.DisplayFor(modelItem => item.MARCA)
+            </td>
+            <td class="text-xl-left">
+                @Html.DisplayFor(modelItem => item.MODELO)
+            </td>
+            <td class="text-xl-left">
+                @Html.DisplayFor(modelItem => item.SERIE)
+            </td>
+            <td class="text-xl-left">
+                @Html.DisplayFor(modelItem => item.PARTICULARIDAD)
+            </td>
+            <td class="text-xl-left">
+                @Html.DisplayFor(modelItem => item.ESTADO)
+            </td>
+            <td class="text-xl-right">
+                @Html.DisplayFor(modelItem => item.NODEFACTURA)
+            </td>
+            <td class="text-xl-right">
+                @Html.DisplayFor(modelItem => item.VALORFACTURA)
+            </td>
+            <td class="text-xl-right">
+                @Html.DisplayFor(modelItem => item.FECHAADQUISICION)
+            </td>
+            <td class="text-xl-left">
+                @Html.DisplayFor(modelItem => item.OBSERVACIONES)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.SECUENCIAL }) |
+                @Html.ActionLink("Detalle", "Details", new { id = item.SECUENCIAL }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.SECUENCIAL })
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+@{Html.RenderPartial("_paginador", Model);}

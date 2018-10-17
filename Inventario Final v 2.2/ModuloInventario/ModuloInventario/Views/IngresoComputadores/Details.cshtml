@@ -1,0 +1,184 @@
+﻿@model ModuloInventario.Models.INGRESOCOMPUTADORES
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<link rel="stylesheet" href="../../Scripts/fontawesome-free-5.3.1-web/css/all.min.css">
+<h2 class="text-center" style="background-color:#3072AC; color:#ffffff;">Detalle</h2>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<div>
+    <h4>Ingreso de Computadores</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt id="Responsable">
+            @Html.DisplayNameFor(model => model.PERSONA.NOMBRE1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PERSONA.NOMBREUNIDO)
+        </dd>
+
+        <dt id="Ciudad">
+            @Html.DisplayNameFor(model => model.SEDE.CODIGO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SEDE.CODIGO)
+        </dd>
+
+        <dt id="Codigo">
+            @Html.DisplayNameFor(model => model.CODIGOINTERNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CODIGOINTERNO)
+        </dd>
+
+        <dt id="Articulo">
+            @Html.DisplayNameFor(model => model.ARTICULO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ARTICULO)
+        </dd>
+
+        <dt id="Ram">
+            @Html.DisplayNameFor(model => model.MEMORIARAM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MEMORIARAM)
+        </dd>
+
+        <dt id="Procesador">
+            @Html.DisplayNameFor(model => model.PROCESADOR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PROCESADOR)
+        </dd>
+
+        <dt id="Disco">
+            @Html.DisplayNameFor(model => model.DISCODURO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DISCODURO)
+        </dd>
+
+        <dt id="Licencia">
+            @Html.DisplayNameFor(model => model.LICENCIADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LICENCIADO)
+        </dd>
+
+        <dt id="Office">
+            @Html.DisplayNameFor(model => model.OFFICE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OFFICE)
+        </dd>
+
+        <dt id="Marca">
+            @Html.DisplayNameFor(model => model.MARCA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MARCA)
+        </dd>
+
+        <dt id="Modelo">
+            @Html.DisplayNameFor(model => model.MODELO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MODELO)
+        </dd>
+
+        <dt id="Serie">
+            @Html.DisplayNameFor(model => model.SERIE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SERIE)
+        </dd>
+
+        <dt id="Particularidad">
+            @Html.DisplayNameFor(model => model.PARTICULARIDAD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PARTICULARIDAD)
+        </dd>
+
+        <dt id="Estado">
+            @Html.DisplayNameFor(model => model.ESTADO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ESTADO)
+        </dd>
+
+        <dt id="FacturaN">
+            @Html.DisplayNameFor(model => model.NODEFACTURA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NODEFACTURA)
+        </dd>
+
+        <dt id="FacturaV">
+            @Html.DisplayNameFor(model => model.VALORFACTURA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VALORFACTURA)
+        </dd>
+
+        <dt id="Fecha">
+            @Html.DisplayNameFor(model => model.FECHAADQUISICION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHAADQUISICION)
+        </dd>
+
+        <dt id="Observaciones">
+            @Html.DisplayNameFor(model => model.OBSERVACIONES)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OBSERVACIONES)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.SECUENCIAL }) |
+    @Html.ActionLink("Volver", "Index")
+</p>
+
+<script>
+    $('#Responsable').text('Asignado A:');
+    $('#Codigo').text('C\u00F3digo Interno');
+    $('#Ciudad').text('Ciudad de Ubicaci\u00F3n');
+    $('#Articulo').text('Tipo de Equipo');
+    $('#Ram').text('Memoria RAM(GB)');
+    $('#Procesador').text('Procesador');
+    $('#Disco').text('Disco Duro(GB)');
+    $('#Licencia').text('Licenciado');
+    $('#Office').text('Office');
+    $('#Marca').text('Marca');
+    $('#Modelo').text('Modelo');
+    $('#Serie').text('Serie');
+    $('#Particularidad').text('Particularidad');
+    $('#Estado').text('Estado Activo');
+    $('#FacturaN').text('NºFactura');
+    $('#FacturaV').text('Valor de Factura');
+    $('#Fecha').text('Fecha de Adquisici\u00F3n');
+    $('#Observaciones').text('Observaciones');
+</script>

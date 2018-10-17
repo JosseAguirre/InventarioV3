@@ -1,0 +1,119 @@
+﻿@model ModuloInventario.Models.ASIGNACIONCOMPUTADORES
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<br />
+<link rel="stylesheet" href="../../Scripts/fontawesome-free-5.3.1-web/css/all.min.css">
+<h2 class="text-center" style="background-color:#3072AC; color:#ffffff;">Editar Registro</h2>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>ASIGNACIONVARIOS</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.SECUENCIAL)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SECUENCIALRESPONSABLE, "SECUENCIALRESPONSABLE", htmlAttributes: new { @class = "control-label col-md-2", id = "Responsable" })
+            <div class="col-md-10">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-user fa-1x"></i></span>
+                    @Html.DropDownList("SECUENCIALRESPONSABLE", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SECUENCIALRESPONSABLE, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SECUENCIALCOMPUTADOR, "SECUENCIALCOMPUTADOR", htmlAttributes: new { @class = "control-label col-md-2", id = "Codigo" })
+            <div class="col-md-10">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-desktop fa-1x"></i></span>
+                    @Html.DropDownList("SECUENCIALCOMPUTADOR", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SECUENCIALCOMPUTADOR, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UBICACION, "UBICACION", htmlAttributes: new { @class = "control-label col-md-2", id = "Ubicacion" })
+            <div class="col-md-10">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
+                    @Html.DropDownList("UBICACION", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.UBICACION, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FECHAASIGNACION, htmlAttributes: new { @class = "control-label col-md-2", id = "FechaAsignacion" })
+            <div class="col-md-10">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-calendar-alt"></i></span>
+                    @Html.EditorFor(model => model.FECHAASIGNACION, new { htmlAttributes = new { @class = "form-control"} })
+                    @Html.ValidationMessageFor(model => model.FECHAASIGNACION, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FECHAENTREGA, htmlAttributes: new { @class = "control-label col-md-2", id= "FechaEntrega" })
+            <div class="col-md-10">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-calendar-alt"></i></span>
+                    @Html.EditorFor(model => model.FECHAENTREGA, new { htmlAttributes = new { @class = "form-control"} })
+                    @Html.ValidationMessageFor(model => model.FECHAENTREGA, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ESTADOENTREGA, htmlAttributes: new { @class = "control-label col-md-2", id = "EstadoEntrega" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.ESTADOENTREGA)
+                    @Html.ValidationMessageFor(model => model.ESTADOENTREGA, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OBSERVACIONES, "OBSERVACIONES", htmlAttributes: new { @class = "control-label col-md-2", id = "Observaciones" })
+            <div class="col-md-10">
+                @Html.TextArea("OBSERVACIONES", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.OBSERVACIONES, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="submit" value="Save" class="btn btn-outline-warning"><i class="fas fa-save"></i> Guardar</button>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Volver", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script>
+    $('#Responsable').text('Responsable:');
+    $('#Codigo').text('C\u00F3digo Interno:');
+    $('#Ubicacion').text('Ubicaci\u00F3n:');
+    $('#FechaAsignacion').text('Fecha de Asignaci\u00F3n:');
+    $('#FechaEntrega').text('Fecha de Finalizaci\u00F3n:');
+    $('#EstadoEntrega').text('¿A sido entregado?:');
+    $('#Observaciones').text('Observaciones:');
+</script>
