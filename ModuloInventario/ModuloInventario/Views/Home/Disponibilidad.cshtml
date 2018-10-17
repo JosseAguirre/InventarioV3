@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewBag.Title = "Disponibilidad";
+}
+
+<!DOCTYPE html>
+<link rel="stylesheet" href="../Scripts/fontawesome-free-5.3.1-web/css/all.min.css">
+<html>
+<head>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/Mapa Ecuador/jquery-jvectormap-2.0.3.css"></script>
+    <script src="~/Scripts/Mapa Ecuador/jquery-jvectormap-2.0.3.min.js"></script>
+    <script src="~/Scripts/Mapa Ecuador/Mapa.Ecuador.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>Disponibilidad</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Computadores', 'Cantidad'],
+                ['Total', 35],
+                ['Asignados', 9]
+            ]);
+
+            var options = {
+                title: 'Computadores - Laptops'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+<body>
+    <br />
+    <p></p>
+    <h1 class="text-left">Disponibilidad</h1>
+    <div class="row bg">
+        <div id="world-map" style="width: 100px; height: 100px; zoom: 2;"></div>
+        <div class="col-sm-4">
+            <div id="piechart" style="width: 400px; height: 300px;"></div>
+        </div>
+        <div class="col-sm-4">
+            <div id="piechart1" style="width: 400px; height: 300px;"></div>
+        </div>
+    </div>
+    <a href="/" class="btn btn-outline-primary btn-sm"><i class="fas fa-undo-alt fa-1x"></i> Regresar</a>
+</body>
+</html>
+
+<script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+            ['Equipos', 'Cantidad'],
+            ['Total', 52],
+            ['Asignados', 7]
+        ]);
+
+        var options = {
+            title: 'Art\u00EDculos Varios'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
+
+        chart.draw(data, options);
+    }
+</script>
+<script>
+    $('#world-map').vectorMap({
+        map: 'Ecuador',
+        backgroundColor: '#9D9EA0',
+        series: {
+            regions: [{
+                values: { "c0": "1", "c1": "2" },
+                scale: ['#d9d4ca', '#b3d1ff'],
+                normalizeFunction: 'polynomial'
+
+            }]
+
+        },
+        regionStyle: {
+            initial: {
+                fill: "#f4f3f0",
+                stroke: "#666666",
+                "stroke-width": 1,
+                "stroke-opacity": 1
+
+            },
+            hover: {
+                fill: "#0051A3",
+                "fill-opacity": "1"
+
+            }
+
+        },
+        series: {
+            regions: [{
+                values: {
+                    'Pichincha': '#F76300',
+                    'Tungurahua': '#F76300'
+                },
+                attribute: 'fill'
+            }]
+        }
+    })
+</script>
